@@ -1,6 +1,6 @@
 import { parseAgentSessionKey } from "../../../src/sessions/session-key-utils.js";
 import { scheduleChatScroll } from "./app-scroll.ts";
-import { setLastActiveSessionKey } from "./app-settings.ts";
+import { setLastActiveSessionKey, syncUrlWithSessionKey } from "./app-settings.ts";
 import { resetToolStream } from "./app-tool-stream.ts";
 import type { OpenClawApp } from "./app.ts";
 import { abortChatRun, loadChatHistory, sendChatMessage } from "./controllers/chat.ts";
@@ -24,7 +24,7 @@ export type ChatHost = {
   refreshSessionsAfterChat: Set<string>;
 };
 
-export const CHAT_SESSIONS_ACTIVE_MINUTES = 120;
+export const CHAT_SESSIONS_ACTIVE_MINUTES = 0;
 
 export function isChatBusy(host: ChatHost) {
   return host.chatSending || Boolean(host.chatRunId);
@@ -60,6 +60,11 @@ function isChatResetCommand(text: string) {
   return normalized.startsWith("/new ") || normalized.startsWith("/reset ");
 }
 
+function isBareChatResetCommand(text: string) {
+  const normalized = text.trim().toLowerCase();
+  return normalized === "/new" || normalized === "/reset";
+}
+
 export async function handleAbortChat(host: ChatHost) {
   if (!host.connected) {
     return;
@@ -89,6 +94,34 @@ function enqueueChatMessage(
       refreshSessions,
     },
   ];
+}
+
+async function forkChatSession(host: ChatHost) {
+  const nextSessionKey = `webchat:${generateUUID().slice(0, 8)}`;
+  host.sessionKey = nextSessionKey;
+  host.chatMessage = "";
+  host.chatAttachments = [];
+  host.chatQueue = [];
+  host.chatRunId = null;
+
+  resetToolStream(host as unknown as Parameters<typeof resetToolStream>[0]);
+  setLastActiveSessionKey(
+    host as unknown as Parameters<typeof setLastActiveSessionKey>[0],
+    nextSessionKey,
+  );
+  syncUrlWithSessionKey(
+    host as unknown as Parameters<typeof syncUrlWithSessionKey>[0],
+    nextSessionKey,
+    true,
+  );
+
+  await Promise.all([
+    loadChatHistory(host as unknown as OpenClawApp),
+    loadSessions(host as unknown as OpenClawApp, {
+      activeMinutes: CHAT_SESSIONS_ACTIVE_MINUTES,
+    }),
+    refreshChatAvatar(host),
+  ]);
 }
 
 async function sendChatMessageNow(
@@ -177,6 +210,11 @@ export async function handleSendChat(
 
   if (isChatStopCommand(message)) {
     await handleAbortChat(host);
+    return;
+  }
+
+  if (isBareChatResetCommand(message)) {
+    await forkChatSession(host);
     return;
   }
 
