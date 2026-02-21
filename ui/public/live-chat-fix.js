@@ -159,7 +159,7 @@
         limit: 200,
       });
       const messages = Array.isArray(res?.messages) ? res.messages : [];
-      const sig = `${messages.length}:${JSON.stringify(messages.at(-1) ?? null).slice(0, 400)}`;
+      const sig = `${app.sessionKey}:${messages.length}:${JSON.stringify(messages.at(-1) ?? null).slice(0, 400)}`;
       if (sig !== state.lastHistorySig) {
         state.lastHistorySig = sig;
         app.chatMessages = messages;
@@ -214,7 +214,8 @@
       return;
     }
 
-    if (app.chatSending || app.chatRunId || latestDelta) {
+    const shouldPassiveSync = app.tab === "chat" && !app.chatManualRefreshInFlight;
+    if (app.chatSending || app.chatRunId || latestDelta || shouldPassiveSync) {
       await refreshHistory(app, false);
     }
   }
