@@ -39,6 +39,14 @@ OpenClaw 폴더 내 작업(설정 변경, 이슈 트리아지, 장애 분석, �
 - 스킬 파일: `openclaw/skills/claude-code-openclaw/SKILL.md`
 - 스킬 참조 인덱스: `openclaw/docs-index/master-index.md`
 
+## Gateway 재시작 안전 규칙
+
+- 대화 흐름 보존이 필요한 환경에서는 `openclaw gateway restart`를 직접 치지 않는다.
+- 반드시 아래 래퍼를 사용한다.
+  - `bash /home/khj12/.openclaw/workspace/scripts/restart_gateway_with_resume_detached.sh`
+- 필요 시 세션 키를 명시한다.
+  - `bash /home/khj12/.openclaw/workspace/scripts/restart_gateway_with_resume_detached.sh --session-key agent:main:main`
+
 ## 원칙
 
 - 두 번 다시 삽질하지 않는다.
