@@ -1,0 +1,178 @@
+# uc-model-agent-core
+
+- 목적: 모델/에이전트 코어 개념 및 레퍼런스
+- 문서 수: 170
+- 규칙: 한 줄당 1문서, 경로 기준으로 소스 역추적
+
+## 문서 목록
+
+- [DOC-0082] (en) Agent Loop (OpenClaw) — `concepts/agent-loop.md`
+- [DOC-0083] (en) Agent workspace — `concepts/agent-workspace.md`
+- [DOC-0084] (en) Agent Runtime 🤖 — `concepts/agent.md`
+- [DOC-0085] (en) Gateway architecture — `concepts/architecture.md`
+- [DOC-0086] (en) Context Window & Compaction — `concepts/compaction.md`
+- [DOC-0087] (en) Context — `concepts/context.md`
+- [DOC-0088] (en) Highlights — `concepts/features.md`
+- [DOC-0089] (en) Markdown formatting — `concepts/markdown-formatting.md`
+- [DOC-0090] (en) Memory — `concepts/memory.md`
+- [DOC-0091] (en) Messages — `concepts/messages.md`
+- [DOC-0092] (en) Model failover — `concepts/model-failover.md`
+- [DOC-0093] (en) Model providers — `concepts/model-providers.md`
+- [DOC-0094] (en) Models CLI — `concepts/models.md`
+- [DOC-0095] (en) Multi-Agent Routing — `concepts/multi-agent.md`
+- [DOC-0096] (en) OAuth — `concepts/oauth.md`
+- [DOC-0097] (en) Presence — `concepts/presence.md`
+- [DOC-0098] (en) Command Queue (2026-01-16) — `concepts/queue.md`
+- [DOC-0099] (en) Retry policy — `concepts/retry.md`
+- [DOC-0100] (en) Session Pruning — `concepts/session-pruning.md`
+- [DOC-0101] (en) Session Tools — `concepts/session-tool.md`
+- [DOC-0102] (en) Session Management — `concepts/session.md`
+- [DOC-0103] (en) Sessions — `concepts/sessions.md`
+- [DOC-0104] (en) Streaming + chunking — `concepts/streaming.md`
+- [DOC-0105] (en) System Prompt — `concepts/system-prompt.md`
+- [DOC-0106] (en) Timezones — `concepts/timezone.md`
+- [DOC-0107] (en) TypeBox as protocol source of truth — `concepts/typebox.md`
+- [DOC-0108] (en) Typing indicators — `concepts/typing-indicators.md`
+- [DOC-0109] (en) Usage tracking — `concepts/usage-tracking.md`
+- [DOC-0110] (en) Date & Time — `date-time.md`
+- [DOC-0186] (en) Audio / Voice Notes — 2026-01-17 — `nodes/audio.md`
+- [DOC-0187] (en) Camera capture (agent) — `nodes/camera.md`
+- [DOC-0188] (en) Image & Media Support — 2025-12-05 — `nodes/images.md`
+- [DOC-0189] (en) Nodes — `nodes/index.md`
+- [DOC-0190] (en) Location command (nodes) — `nodes/location-command.md`
+- [DOC-0191] (en) Media Understanding (Inbound) — 2026-01-17 — `nodes/media-understanding.md`
+- [DOC-0192] (en) Talk Mode — `nodes/talk.md`
+- [DOC-0194] (en) Voice Wake (Global Wake Words) — `nodes/voicewake.md`
+- [DOC-0230] (en) OpenProse — `prose.md`
+- [DOC-0231] (en) Anthropic (Claude) — `providers/anthropic.md`
+- [DOC-0232] (en) Amazon Bedrock — `providers/bedrock.md`
+- [DOC-0233] (en) Claude Max API Proxy — `providers/claude-max-api-proxy.md`
+- [DOC-0234] (en) Cloudflare AI Gateway — `providers/cloudflare-ai-gateway.md`
+- [DOC-0235] (en) Deepgram (Audio Transcription) — `providers/deepgram.md`
+- [DOC-0236] (en) GitHub Copilot — `providers/github-copilot.md`
+- [DOC-0237] (en) GLM models — `providers/glm.md`
+- [DOC-0238] (en) Hugging Face (Inference) — `providers/huggingface.md`
+- [DOC-0239] (en) Model Providers — `providers/index.md`
+- [DOC-0240] (en) LiteLLM — `providers/litellm.md`
+- [DOC-0241] (en) MiniMax — `providers/minimax.md`
+- [DOC-0242] (en) Model Providers — `providers/models.md`
+- [DOC-0243] (en) Moonshot AI (Kimi) — `providers/moonshot.md`
+- [DOC-0244] (en) NVIDIA — `providers/nvidia.md`
+- [DOC-0245] (en) Ollama — `providers/ollama.md`
+- [DOC-0246] (en) OpenAI — `providers/openai.md`
+- [DOC-0247] (en) OpenCode Zen — `providers/opencode.md`
+- [DOC-0248] (en) OpenRouter — `providers/openrouter.md`
+- [DOC-0249] (en) Qianfan Provider Guide — `providers/qianfan.md`
+- [DOC-0250] (en) Qwen — `providers/qwen.md`
+- [DOC-0251] (en) Synthetic — `providers/synthetic.md`
+- [DOC-0252] (en) Together AI — `providers/together.md`
+- [DOC-0253] (en) Venice AI (Venice highlight) — `providers/venice.md`
+- [DOC-0254] (en) Vercel AI Gateway — `providers/vercel-ai-gateway.md`
+- [DOC-0255] (en) vLLM — `providers/vllm.md`
+- [DOC-0256] (en) Xiaomi MiMo — `providers/xiaomi.md`
+- [DOC-0257] (en) Z.AI — `providers/zai.md`
+- [DOC-0263] (en) AGENTS.md — OpenClaw Personal Assistant (default) — `reference/AGENTS.default.md`
+- [DOC-0264] (en) Release Checklist (npm + macOS) — `reference/RELEASING.md`
+- [DOC-0265] (en) API usage & costs — `reference/api-usage-costs.md`
+- [DOC-0266] (en) The name — `reference/credits.md`
+- [DOC-0267] (en) Device model database (friendly names) — `reference/device-models.md`
+- [DOC-0268] (en) RPC adapters — `reference/rpc.md`
+- [DOC-0269] (en) Session Management & Compaction (Deep Dive) — `reference/session-management-compaction.md`
+- [DOC-0270] (en) AGENTS.md - OpenClaw Workspace — `reference/templates/AGENTS.dev.md`
+- [DOC-0271] (en) AGENTS.md - Your Workspace — `reference/templates/AGENTS.md`
+- [DOC-0272] (en) BOOT.md — `reference/templates/BOOT.md`
+- [DOC-0273] (en) BOOTSTRAP.md - Hello, World — `reference/templates/BOOTSTRAP.md`
+- [DOC-0275] (en) IDENTITY.md - Agent Identity — `reference/templates/IDENTITY.dev.md`
+- [DOC-0276] (en) IDENTITY.md - Who Am I? — `reference/templates/IDENTITY.md`
+- [DOC-0277] (en) SOUL.md - The Soul of C-3PO — `reference/templates/SOUL.dev.md`
+- [DOC-0278] (en) SOUL.md - Who You Are — `reference/templates/SOUL.md`
+- [DOC-0279] (en) TOOLS.md - User Tool Notes (editable) — `reference/templates/TOOLS.dev.md`
+- [DOC-0280] (en) TOOLS.md - Local Notes — `reference/templates/TOOLS.md`
+- [DOC-0281] (en) USER.md - User Profile — `reference/templates/USER.dev.md`
+- [DOC-0282] (en) USER.md - About Your Human — `reference/templates/USER.md`
+- [DOC-0283] (en) Tests — `reference/test.md`
+- [DOC-0284] (en) Token use & costs — `reference/token-use.md`
+- [DOC-0285] (en) Transcript Hygiene (Provider Fixups) — `reference/transcript-hygiene.md`
+- [DOC-0286] (en) Onboarding Wizard Reference — `reference/wizard.md`
+- [DOC-0416] (zh-CN) 智能体循环（OpenClaw） — `zh-CN/concepts/agent-loop.md`
+- [DOC-0417] (zh-CN) 智能体工作区 — `zh-CN/concepts/agent-workspace.md`
+- [DOC-0418] (zh-CN) 智能体运行时 🤖 — `zh-CN/concepts/agent.md`
+- [DOC-0419] (zh-CN) Gateway 网关架构 — `zh-CN/concepts/architecture.md`
+- [DOC-0420] (zh-CN) 上下文窗口与压缩 — `zh-CN/concepts/compaction.md`
+- [DOC-0421] (zh-CN) 上下文 — `zh-CN/concepts/context.md`
+- [DOC-0422] (zh-CN) 亮点 — `zh-CN/concepts/features.md`
+- [DOC-0423] (zh-CN) Markdown 格式化 — `zh-CN/concepts/markdown-formatting.md`
+- [DOC-0424] (zh-CN) 记忆 — `zh-CN/concepts/memory.md`
+- [DOC-0425] (zh-CN) 消息 — `zh-CN/concepts/messages.md`
+- [DOC-0426] (zh-CN) 模型故障转移 — `zh-CN/concepts/model-failover.md`
+- [DOC-0427] (zh-CN) 模型提供商 — `zh-CN/concepts/model-providers.md`
+- [DOC-0428] (zh-CN) 模型 CLI — `zh-CN/concepts/models.md`
+- [DOC-0429] (zh-CN) 多智能体路由 — `zh-CN/concepts/multi-agent.md`
+- [DOC-0430] (zh-CN) OAuth — `zh-CN/concepts/oauth.md`
+- [DOC-0431] (zh-CN) 在线状态 — `zh-CN/concepts/presence.md`
+- [DOC-0432] (zh-CN) 命令队列（2026-01-16） — `zh-CN/concepts/queue.md`
+- [DOC-0433] (zh-CN) 重试策略 — `zh-CN/concepts/retry.md`
+- [DOC-0434] (zh-CN) 会话剪枝 — `zh-CN/concepts/session-pruning.md`
+- [DOC-0435] (zh-CN) 会话工具 — `zh-CN/concepts/session-tool.md`
+- [DOC-0436] (zh-CN) 会话管理 — `zh-CN/concepts/session.md`
+- [DOC-0437] (zh-CN) 会话 — `zh-CN/concepts/sessions.md`
+- [DOC-0438] (zh-CN) 流式传输 + 分块 — `zh-CN/concepts/streaming.md`
+- [DOC-0439] (zh-CN) 系统提示词 — `zh-CN/concepts/system-prompt.md`
+- [DOC-0440] (zh-CN) 时区 — `zh-CN/concepts/timezone.md`
+- [DOC-0441] (zh-CN) TypeBox 作为协议的事实来源 — `zh-CN/concepts/typebox.md`
+- [DOC-0442] (zh-CN) 输入指示器 — `zh-CN/concepts/typing-indicators.md`
+- [DOC-0443] (zh-CN) 使用量跟踪 — `zh-CN/concepts/usage-tracking.md`
+- [DOC-0444] (zh-CN) 日期与时间 — `zh-CN/date-time.md`
+- [DOC-0511] (zh-CN) 音频 / 语音消息 — 2026-01-17 — `zh-CN/nodes/audio.md`
+- [DOC-0512] (zh-CN) 相机捕获（智能体） — `zh-CN/nodes/camera.md`
+- [DOC-0513] (zh-CN) 图像与媒体支持 — 2025-12-05 — `zh-CN/nodes/images.md`
+- [DOC-0514] (zh-CN) 节点 — `zh-CN/nodes/index.md`
+- [DOC-0515] (zh-CN) 位置命令（节点） — `zh-CN/nodes/location-command.md`
+- [DOC-0516] (zh-CN) 媒体理解（入站）— 2026-01-17 — `zh-CN/nodes/media-understanding.md`
+- [DOC-0517] (zh-CN) Talk 模式 — `zh-CN/nodes/talk.md`
+- [DOC-0519] (zh-CN) 语音唤醒（全局唤醒词） — `zh-CN/nodes/voicewake.md`
+- [DOC-0554] (zh-CN) OpenProse — `zh-CN/prose.md`
+- [DOC-0555] (zh-CN) Anthropic（Claude） — `zh-CN/providers/anthropic.md`
+- [DOC-0556] (zh-CN) Amazon Bedrock — `zh-CN/providers/bedrock.md`
+- [DOC-0557] (zh-CN) Claude Max API 代理 — `zh-CN/providers/claude-max-api-proxy.md`
+- [DOC-0558] (zh-CN) Deepgram（音频转录） — `zh-CN/providers/deepgram.md`
+- [DOC-0559] (zh-CN) GitHub Copilot — `zh-CN/providers/github-copilot.md`
+- [DOC-0560] (zh-CN) GLM 模型 — `zh-CN/providers/glm.md`
+- [DOC-0561] (zh-CN) 模型提供商 — `zh-CN/providers/index.md`
+- [DOC-0562] (zh-CN) MiniMax — `zh-CN/providers/minimax.md`
+- [DOC-0563] (zh-CN) 模型提供商 — `zh-CN/providers/models.md`
+- [DOC-0564] (zh-CN) Moonshot AI (Kimi) — `zh-CN/providers/moonshot.md`
+- [DOC-0565] (zh-CN) Ollama — `zh-CN/providers/ollama.md`
+- [DOC-0566] (zh-CN) OpenAI — `zh-CN/providers/openai.md`
+- [DOC-0567] (zh-CN) OpenCode Zen — `zh-CN/providers/opencode.md`
+- [DOC-0568] (zh-CN) OpenRouter — `zh-CN/providers/openrouter.md`
+- [DOC-0569] (zh-CN) 千帆（Qianfan） — `zh-CN/providers/qianfan.md`
+- [DOC-0570] (zh-CN) Qwen — `zh-CN/providers/qwen.md`
+- [DOC-0571] (zh-CN) Synthetic — `zh-CN/providers/synthetic.md`
+- [DOC-0572] (zh-CN) Venice AI（Venice 精选） — `zh-CN/providers/venice.md`
+- [DOC-0573] (zh-CN) Vercel AI Gateway — `zh-CN/providers/vercel-ai-gateway.md`
+- [DOC-0574] (zh-CN) Xiaomi MiMo — `zh-CN/providers/xiaomi.md`
+- [DOC-0575] (zh-CN) Z.AI — `zh-CN/providers/zai.md`
+- [DOC-0581] (zh-CN) AGENTS.md — OpenClaw 个人助手（默认） — `zh-CN/reference/AGENTS.default.md`
+- [DOC-0582] (zh-CN) 发布清单（npm + macOS） — `zh-CN/reference/RELEASING.md`
+- [DOC-0583] (zh-CN) API 用量与费用 — `zh-CN/reference/api-usage-costs.md`
+- [DOC-0584] (zh-CN) 名称由来 — `zh-CN/reference/credits.md`
+- [DOC-0585] (zh-CN) 设备型号数据库（友好名称） — `zh-CN/reference/device-models.md`
+- [DOC-0586] (zh-CN) RPC 适配器 — `zh-CN/reference/rpc.md`
+- [DOC-0587] (zh-CN) 会话管理与压缩（深入了解） — `zh-CN/reference/session-management-compaction.md`
+- [DOC-0588] (zh-CN) AGENTS.md - OpenClaw 工作区 — `zh-CN/reference/templates/AGENTS.dev.md`
+- [DOC-0589] (zh-CN) AGENTS.md - 你的工作区 — `zh-CN/reference/templates/AGENTS.md`
+- [DOC-0590] (zh-CN) BOOT.md — `zh-CN/reference/templates/BOOT.md`
+- [DOC-0591] (zh-CN) BOOTSTRAP.md - Hello, World — `zh-CN/reference/templates/BOOTSTRAP.md`
+- [DOC-0593] (zh-CN) IDENTITY.md - 智能体身份 — `zh-CN/reference/templates/IDENTITY.dev.md`
+- [DOC-0594] (zh-CN) IDENTITY.md - 我是谁？ — `zh-CN/reference/templates/IDENTITY.md`
+- [DOC-0595] (zh-CN) SOUL.md - C-3PO 的灵魂 — `zh-CN/reference/templates/SOUL.dev.md`
+- [DOC-0596] (zh-CN) SOUL.md - 你是谁 — `zh-CN/reference/templates/SOUL.md`
+- [DOC-0597] (zh-CN) TOOLS.md - 用户工具备注（可编辑） — `zh-CN/reference/templates/TOOLS.dev.md`
+- [DOC-0598] (zh-CN) TOOLS.md - 本地备注 — `zh-CN/reference/templates/TOOLS.md`
+- [DOC-0599] (zh-CN) USER.md - 用户档案 — `zh-CN/reference/templates/USER.dev.md`
+- [DOC-0600] (zh-CN) USER.md - 关于你的用户 — `zh-CN/reference/templates/USER.md`
+- [DOC-0601] (zh-CN) 测试 — `zh-CN/reference/test.md`
+- [DOC-0602] (zh-CN) Token 使用与成本 — `zh-CN/reference/token-use.md`
+- [DOC-0603] (zh-CN) 对话记录清理（提供商修正） — `zh-CN/reference/transcript-hygiene.md`
+- [DOC-0604] (zh-CN) 向导参考 — `zh-CN/reference/wizard.md`

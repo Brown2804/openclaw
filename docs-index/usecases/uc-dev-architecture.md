@@ -1,0 +1,98 @@
+# uc-dev-architecture
+
+- 목적: 아키텍처/실험/리팩터/개발 참고
+- 문서 수: 90
+- 규칙: 한 줄당 1문서, 경로 기준으로 소스 역추적
+
+## 문서 목록
+
+- [DOC-0001] (en) OpenClaw docs i18n assets — `.i18n/README.md`
+- [DOC-0040] (en) CI Pipeline — `ci.md`
+- [DOC-0113] (en) Onboarding + Config Protocol — `experiments/onboarding-config-protocol.md`
+- [DOC-0114] (en) Browser Evaluate CDP Refactor Plan — `experiments/plans/browser-evaluate-cdp-refactor.md`
+- [DOC-0116] (en) Telegram Allowlist Hardening — `experiments/plans/group-policy-hardening.md`
+- [DOC-0117] (en) OpenResponses Gateway Integration Plan — `experiments/plans/openresponses-gateway.md`
+- [DOC-0118] (en) PTY and Process Supervision Plan — `experiments/plans/pty-process-supervision.md`
+- [DOC-0119] (en) Model Config (Exploration) — `experiments/proposals/model-config.md`
+- [DOC-0120] (en) Workspace Memory v2 (offline): research notes — `experiments/research/memory.md`
+- [DOC-0153] (en) Environment variables — `help/environment.md`
+- [DOC-0155] (en) Help — `help/index.md`
+- [DOC-0156] (en) Scripts — `help/scripts.md`
+- [DOC-0159] (en) OpenClaw 🦞 — `index.md`
+- [DOC-0180] (en) AGENTS.md - ja-JP docs translation workspace — `ja-JP/AGENTS.md`
+- [DOC-0181] (en) OpenClaw 🦞 — `ja-JP/index.md`
+- [DOC-0182] (en) はじめに — `ja-JP/start/getting-started.md`
+- [DOC-0183] (en) オンボーディングウィザード（CLI） — `ja-JP/start/wizard.md`
+- [DOC-0198] (en) Android App (Node) — `platforms/android.md`
+- [DOC-0199] (en) OpenClaw on DigitalOcean — `platforms/digitalocean.md`
+- [DOC-0200] (en) Platforms — `platforms/index.md`
+- [DOC-0201] (en) iOS App (Node) — `platforms/ios.md`
+- [DOC-0202] (en) Linux App — `platforms/linux.md`
+- [DOC-0203] (en) Gateway on macOS (external launchd) — `platforms/mac/bundled-gateway.md`
+- [DOC-0204] (en) Canvas (macOS app) — `platforms/mac/canvas.md`
+- [DOC-0205] (en) Gateway lifecycle on macOS — `platforms/mac/child-process.md`
+- [DOC-0206] (en) macOS Developer Setup — `platforms/mac/dev-setup.md`
+- [DOC-0208] (en) Menu Bar Icon States — `platforms/mac/icon.md`
+- [DOC-0209] (en) Logging (macOS) — `platforms/mac/logging.md`
+- [DOC-0210] (en) Menu Bar Status Logic — `platforms/mac/menu-bar.md`
+- [DOC-0211] (en) Peekaboo Bridge (macOS UI automation) — `platforms/mac/peekaboo.md`
+- [DOC-0212] (en) macOS permissions (TCC) — `platforms/mac/permissions.md`
+- [DOC-0213] (en) OpenClaw macOS release (Sparkle) — `platforms/mac/release.md`
+- [DOC-0214] (en) Remote OpenClaw (macOS ⇄ remote host) — `platforms/mac/remote.md`
+- [DOC-0215] (en) mac signing (debug builds) — `platforms/mac/signing.md`
+- [DOC-0216] (en) Skills (macOS) — `platforms/mac/skills.md`
+- [DOC-0217] (en) Voice Overlay Lifecycle (macOS) — `platforms/mac/voice-overlay.md`
+- [DOC-0218] (en) Voice Wake & Push-to-Talk — `platforms/mac/voicewake.md`
+- [DOC-0219] (en) WebChat (macOS app) — `platforms/mac/webchat.md`
+- [DOC-0220] (en) OpenClaw macOS IPC architecture — `platforms/mac/xpc.md`
+- [DOC-0221] (en) OpenClaw macOS Companion (menu bar + gateway broker) — `platforms/macos.md`
+- [DOC-0222] (en) OpenClaw on Oracle Cloud (OCI) — `platforms/oracle.md`
+- [DOC-0223] (en) OpenClaw on Raspberry Pi — `platforms/raspberry-pi.md`
+- [DOC-0224] (en) Windows (WSL2) — `platforms/windows.md`
+- [DOC-0258] (en) Clawnet refactor (protocol + auth unification) — `refactor/clawnet.md`
+- [DOC-0259] (en) Exec host refactor plan — `refactor/exec-host.md`
+- [DOC-0260] (en) Outbound Session Mirroring Refactor (Issue #1520) — `refactor/outbound-session-mirroring.md`
+- [DOC-0261] (en) Plugin SDK + Runtime Refactor Plan — `refactor/plugin-sdk.md`
+- [DOC-0262] (en) Strict config validation (doctor-only migrations) — `refactor/strict-config.md`
+- [DOC-0288] (en) OpenClaw Security & Trust — `security/README.md`
+- [DOC-0337] (zh-CN) AGENTS.md - zh-CN 文档翻译工作区 — `zh-CN/AGENTS.md`
+- [DOC-0447] (zh-CN) 新手引导 + 配置协议 — `zh-CN/experiments/onboarding-config-protocol.md`
+- [DOC-0449] (zh-CN) Telegram 允许列表加固 — `zh-CN/experiments/plans/group-policy-hardening.md`
+- [DOC-0450] (zh-CN) OpenResponses Gateway 网关集成计划 — `zh-CN/experiments/plans/openresponses-gateway.md`
+- [DOC-0451] (zh-CN) 模型配置（探索） — `zh-CN/experiments/proposals/model-config.md`
+- [DOC-0452] (zh-CN) 工作区记忆 v2（离线）：研究笔记 — `zh-CN/experiments/research/memory.md`
+- [DOC-0483] (zh-CN) 环境变量 — `zh-CN/help/environment.md`
+- [DOC-0485] (zh-CN) 帮助 — `zh-CN/help/index.md`
+- [DOC-0486] (zh-CN) 脚本 — `zh-CN/help/scripts.md`
+- [DOC-0489] (zh-CN) OpenClaw 🦞 — `zh-CN/index.md`
+- [DOC-0523] (zh-CN) Android 应用（节点） — `zh-CN/platforms/android.md`
+- [DOC-0524] (zh-CN) 在 DigitalOcean 上运行 OpenClaw — `zh-CN/platforms/digitalocean.md`
+- [DOC-0525] (zh-CN) 平台 — `zh-CN/platforms/index.md`
+- [DOC-0526] (zh-CN) iOS 应用（节点） — `zh-CN/platforms/ios.md`
+- [DOC-0527] (zh-CN) Linux 应用 — `zh-CN/platforms/linux.md`
+- [DOC-0528] (zh-CN) macOS 上的 Gateway 网关（外部 launchd） — `zh-CN/platforms/mac/bundled-gateway.md`
+- [DOC-0529] (zh-CN) Canvas（macOS 应用） — `zh-CN/platforms/mac/canvas.md`
+- [DOC-0530] (zh-CN) macOS 上的 Gateway 网关生命周期 — `zh-CN/platforms/mac/child-process.md`
+- [DOC-0531] (zh-CN) macOS 开发者设置 — `zh-CN/platforms/mac/dev-setup.md`
+- [DOC-0533] (zh-CN) 菜单栏图标状态 — `zh-CN/platforms/mac/icon.md`
+- [DOC-0534] (zh-CN) 日志（macOS） — `zh-CN/platforms/mac/logging.md`
+- [DOC-0535] (zh-CN) 菜单栏状态逻辑 — `zh-CN/platforms/mac/menu-bar.md`
+- [DOC-0536] (zh-CN) Peekaboo Bridge（macOS UI 自动化） — `zh-CN/platforms/mac/peekaboo.md`
+- [DOC-0537] (zh-CN) macOS 权限（TCC） — `zh-CN/platforms/mac/permissions.md`
+- [DOC-0538] (zh-CN) OpenClaw macOS 发布（Sparkle） — `zh-CN/platforms/mac/release.md`
+- [DOC-0539] (zh-CN) 远程 OpenClaw（macOS ⇄ 远程主机） — `zh-CN/platforms/mac/remote.md`
+- [DOC-0540] (zh-CN) Mac 签名（调试构建） — `zh-CN/platforms/mac/signing.md`
+- [DOC-0541] (zh-CN) Skills（macOS） — `zh-CN/platforms/mac/skills.md`
+- [DOC-0542] (zh-CN) 语音浮层生命周期（macOS） — `zh-CN/platforms/mac/voice-overlay.md`
+- [DOC-0543] (zh-CN) 语音唤醒与按键通话 — `zh-CN/platforms/mac/voicewake.md`
+- [DOC-0544] (zh-CN) WebChat（macOS 应用） — `zh-CN/platforms/mac/webchat.md`
+- [DOC-0545] (zh-CN) OpenClaw macOS IPC 架构 — `zh-CN/platforms/mac/xpc.md`
+- [DOC-0546] (zh-CN) OpenClaw macOS 配套应用（菜单栏 + Gateway 网关代理） — `zh-CN/platforms/macos.md`
+- [DOC-0547] (zh-CN) 在 Oracle Cloud（OCI）上运行 OpenClaw — `zh-CN/platforms/oracle.md`
+- [DOC-0548] (zh-CN) 在 Raspberry Pi 上运行 OpenClaw — `zh-CN/platforms/raspberry-pi.md`
+- [DOC-0549] (zh-CN) Windows (WSL2) — `zh-CN/platforms/windows.md`
+- [DOC-0576] (zh-CN) Clawnet 重构（协议 + 认证统一） — `zh-CN/refactor/clawnet.md`
+- [DOC-0577] (zh-CN) Exec 主机重构计划 — `zh-CN/refactor/exec-host.md`
+- [DOC-0578] (zh-CN) 出站会话镜像重构（Issue #1520） — `zh-CN/refactor/outbound-session-mirroring.md`
+- [DOC-0579] (zh-CN) 插件 SDK + 运行时重构计划 — `zh-CN/refactor/plugin-sdk.md`
+- [DOC-0580] (zh-CN) 严格配置验证（仅通过 doctor 进行迁移） — `zh-CN/refactor/strict-config.md`

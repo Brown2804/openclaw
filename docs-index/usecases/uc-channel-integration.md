@@ -1,0 +1,79 @@
+# uc-channel-integration
+
+- 목적: 채널 연동 및 외부 인터페이스
+- 문서 수: 71
+- 규칙: 한 줄당 1문서, 경로 기준으로 소스 역추적
+
+## 문서 목록
+
+- [DOC-0010] (en) Brave Search API — `brave-search.md`
+- [DOC-0011] (en) BlueBubbles (macOS REST) — `channels/bluebubbles.md`
+- [DOC-0012] (en) Broadcast Groups — `channels/broadcast-groups.md`
+- [DOC-0013] (en) Channels & routing — `channels/channel-routing.md`
+- [DOC-0014] (en) Discord (Bot API) — `channels/discord.md`
+- [DOC-0015] (en) Feishu bot — `channels/feishu.md`
+- [DOC-0016] (en) Google Chat (Chat API) — `channels/googlechat.md`
+- [DOC-0017] (en) grammY Integration (Telegram Bot API) — `channels/grammy.md`
+- [DOC-0018] (en) Group messages (WhatsApp web channel) — `channels/group-messages.md`
+- [DOC-0019] (en) Groups — `channels/groups.md`
+- [DOC-0020] (en) iMessage (legacy: imsg) — `channels/imessage.md`
+- [DOC-0021] (en) Chat Channels — `channels/index.md`
+- [DOC-0022] (en) Quick start — `channels/irc.md`
+- [DOC-0023] (en) LINE (plugin) — `channels/line.md`
+- [DOC-0024] (en) Channel location parsing — `channels/location.md`
+- [DOC-0025] (en) Matrix (plugin) — `channels/matrix.md`
+- [DOC-0026] (en) Mattermost (plugin) — `channels/mattermost.md`
+- [DOC-0027] (en) Microsoft Teams (plugin) — `channels/msteams.md`
+- [DOC-0028] (en) Nextcloud Talk (plugin) — `channels/nextcloud-talk.md`
+- [DOC-0029] (en) Nostr — `channels/nostr.md`
+- [DOC-0030] (en) Pairing — `channels/pairing.md`
+- [DOC-0031] (en) Signal (signal-cli) — `channels/signal.md`
+- [DOC-0032] (en) Slack — `channels/slack.md`
+- [DOC-0033] (en) Telegram (Bot API) — `channels/telegram.md`
+- [DOC-0034] (en) Tlon (plugin) — `channels/tlon.md`
+- [DOC-0036] (en) Twitch (plugin) — `channels/twitch.md`
+- [DOC-0037] (en) WhatsApp (Web channel) — `channels/whatsapp.md`
+- [DOC-0038] (en) Zalo (Bot API) — `channels/zalo.md`
+- [DOC-0039] (en) Zalo Personal (unofficial) — `channels/zalouser.md`
+- [DOC-0195] (en) Perplexity Sonar — `perplexity.md`
+- [DOC-0330] (en) Text-to-speech (TTS) — `tts.md`
+- [DOC-0332] (en) Control UI (browser) — `web/control-ui.md`
+- [DOC-0333] (en) Dashboard (Control UI) — `web/dashboard.md`
+- [DOC-0334] (en) Web (Gateway) — `web/index.md`
+- [DOC-0335] (en) TUI (Terminal UI) — `web/tui.md`
+- [DOC-0336] (en) WebChat (Gateway WebSocket UI) — `web/webchat.md`
+- [DOC-0346] (zh-CN) Brave Search API — `zh-CN/brave-search.md`
+- [DOC-0347] (zh-CN) BlueBubbles（macOS REST） — `zh-CN/channels/bluebubbles.md`
+- [DOC-0348] (zh-CN) 广播群组 — `zh-CN/channels/broadcast-groups.md`
+- [DOC-0349] (zh-CN) 渠道与路由 — `zh-CN/channels/channel-routing.md`
+- [DOC-0350] (zh-CN) Discord（Bot API） — `zh-CN/channels/discord.md`
+- [DOC-0351] (zh-CN) 飞书机器人 — `zh-CN/channels/feishu.md`
+- [DOC-0352] (zh-CN) Google Chat（Chat API） — `zh-CN/channels/googlechat.md`
+- [DOC-0353] (zh-CN) grammY 集成（Telegram Bot API） — `zh-CN/channels/grammy.md`
+- [DOC-0354] (zh-CN) 群组消息（WhatsApp 网页渠道） — `zh-CN/channels/group-messages.md`
+- [DOC-0355] (zh-CN) 群组 — `zh-CN/channels/groups.md`
+- [DOC-0356] (zh-CN) iMessage (imsg) — `zh-CN/channels/imessage.md`
+- [DOC-0357] (zh-CN) 聊天渠道 — `zh-CN/channels/index.md`
+- [DOC-0358] (zh-CN) LINE（插件） — `zh-CN/channels/line.md`
+- [DOC-0359] (zh-CN) 渠道位置解析 — `zh-CN/channels/location.md`
+- [DOC-0360] (zh-CN) Matrix（插件） — `zh-CN/channels/matrix.md`
+- [DOC-0361] (zh-CN) Mattermost（插件） — `zh-CN/channels/mattermost.md`
+- [DOC-0362] (zh-CN) Microsoft Teams（插件） — `zh-CN/channels/msteams.md`
+- [DOC-0363] (zh-CN) Nextcloud Talk（插件） — `zh-CN/channels/nextcloud-talk.md`
+- [DOC-0364] (zh-CN) Nostr — `zh-CN/channels/nostr.md`
+- [DOC-0365] (zh-CN) 配对 — `zh-CN/channels/pairing.md`
+- [DOC-0366] (zh-CN) Signal (signal-cli) — `zh-CN/channels/signal.md`
+- [DOC-0367] (zh-CN) Slack — `zh-CN/channels/slack.md`
+- [DOC-0368] (zh-CN) Telegram（Bot API） — `zh-CN/channels/telegram.md`
+- [DOC-0369] (zh-CN) Tlon（插件） — `zh-CN/channels/tlon.md`
+- [DOC-0371] (zh-CN) Twitch（插件） — `zh-CN/channels/twitch.md`
+- [DOC-0372] (zh-CN) WhatsApp（网页渠道） — `zh-CN/channels/whatsapp.md`
+- [DOC-0373] (zh-CN) Zalo (Bot API) — `zh-CN/channels/zalo.md`
+- [DOC-0374] (zh-CN) Zalo Personal（非官方） — `zh-CN/channels/zalouser.md`
+- [DOC-0520] (zh-CN) Perplexity Sonar — `zh-CN/perplexity.md`
+- [DOC-0641] (zh-CN) 文本转语音（TTS） — `zh-CN/tts.md`
+- [DOC-0643] (zh-CN) 控制 UI（浏览器） — `zh-CN/web/control-ui.md`
+- [DOC-0644] (zh-CN) 仪表板（控制 UI） — `zh-CN/web/dashboard.md`
+- [DOC-0645] (zh-CN) Web（Gateway 网关） — `zh-CN/web/index.md`
+- [DOC-0646] (zh-CN) TUI（终端 UI） — `zh-CN/web/tui.md`
+- [DOC-0647] (zh-CN) WebChat（Gateway 网关 WebSocket UI） — `zh-CN/web/webchat.md`

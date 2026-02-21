@@ -1,0 +1,60 @@
+# uc-gateway-operations
+
+- 목적: 게이트웨이 운영/로깅/런타임 관리
+- 문서 수: 52
+- 규칙: 한 줄당 1문서, 경로 기준으로 소스 역추적
+
+## 문서 목록
+
+- [DOC-0121] (en) Authentication — `gateway/authentication.md`
+- [DOC-0122] (en) Background Exec + Process Tool — `gateway/background-process.md`
+- [DOC-0123] (en) Bonjour / mDNS discovery — `gateway/bonjour.md`
+- [DOC-0124] (en) Bridge protocol (legacy node transport) — `gateway/bridge-protocol.md`
+- [DOC-0125] (en) CLI backends (fallback runtime) — `gateway/cli-backends.md`
+- [DOC-0126] (en) Configuration Examples — `gateway/configuration-examples.md`
+- [DOC-0127] (en) Configuration Reference — `gateway/configuration-reference.md`
+- [DOC-0128] (en) Configuration — `gateway/configuration.md`
+- [DOC-0129] (en) Discovery & transports — `gateway/discovery.md`
+- [DOC-0131] (en) Gateway lock — `gateway/gateway-lock.md`
+- [DOC-0134] (en) Gateway runbook — `gateway/index.md`
+- [DOC-0135] (en) Local models — `gateway/local-models.md`
+- [DOC-0136] (en) Logging — `gateway/logging.md`
+- [DOC-0137] (en) Multiple Gateways (same host) — `gateway/multiple-gateways.md`
+- [DOC-0138] (en) Core rules — `gateway/network-model.md`
+- [DOC-0139] (en) OpenAI Chat Completions (HTTP) — `gateway/openai-http-api.md`
+- [DOC-0140] (en) OpenResponses API (HTTP) — `gateway/openresponses-http-api.md`
+- [DOC-0141] (en) Gateway-owned pairing (Option B) — `gateway/pairing.md`
+- [DOC-0142] (en) Gateway protocol (WebSocket) — `gateway/protocol.md`
+- [DOC-0143] (en) Running OpenClaw.app with a Remote Gateway — `gateway/remote-gateway-readme.md`
+- [DOC-0144] (en) Remote access (SSH, tunnels, and tailnets) — `gateway/remote.md`
+- [DOC-0145] (en) Sandbox vs Tool Policy vs Elevated — `gateway/sandbox-vs-tool-policy-vs-elevated.md`
+- [DOC-0146] (en) Sandboxing — `gateway/sandboxing.md`
+- [DOC-0148] (en) Tailscale (Gateway dashboard) — `gateway/tailscale.md`
+- [DOC-0149] (en) Tools Invoke (HTTP) — `gateway/tools-invoke-http-api.md`
+- [DOC-0151] (en) Trusted Proxy Auth — `gateway/trusted-proxy-auth.md`
+- [DOC-0184] (en) Logging — `logging.md`
+- [DOC-0453] (zh-CN) 认证 — `zh-CN/gateway/authentication.md`
+- [DOC-0454] (zh-CN) 后台 Exec + Process 工具 — `zh-CN/gateway/background-process.md`
+- [DOC-0455] (zh-CN) Bonjour / mDNS 设备发现 — `zh-CN/gateway/bonjour.md`
+- [DOC-0456] (zh-CN) Bridge 协议（旧版节点传输） — `zh-CN/gateway/bridge-protocol.md`
+- [DOC-0457] (zh-CN) CLI 后端（回退运行时） — `zh-CN/gateway/cli-backends.md`
+- [DOC-0458] (zh-CN) 配置示例 — `zh-CN/gateway/configuration-examples.md`
+- [DOC-0459] (zh-CN) 配置 🔧 — `zh-CN/gateway/configuration.md`
+- [DOC-0460] (zh-CN) 设备发现 & 传输协议 — `zh-CN/gateway/discovery.md`
+- [DOC-0462] (zh-CN) Gateway 网关锁 — `zh-CN/gateway/gateway-lock.md`
+- [DOC-0465] (zh-CN) Gateway 网关服务运行手册 — `zh-CN/gateway/index.md`
+- [DOC-0466] (zh-CN) 本地模型 — `zh-CN/gateway/local-models.md`
+- [DOC-0467] (zh-CN) 日志 — `zh-CN/gateway/logging.md`
+- [DOC-0468] (zh-CN) 多 Gateway 网关（同一主机） — `zh-CN/gateway/multiple-gateways.md`
+- [DOC-0469] (zh-CN) 核心规则 — `zh-CN/gateway/network-model.md`
+- [DOC-0470] (zh-CN) OpenAI Chat Completions（HTTP） — `zh-CN/gateway/openai-http-api.md`
+- [DOC-0471] (zh-CN) OpenResponses API（HTTP） — `zh-CN/gateway/openresponses-http-api.md`
+- [DOC-0472] (zh-CN) Gateway 网关拥有的配对（选项 B） — `zh-CN/gateway/pairing.md`
+- [DOC-0473] (zh-CN) Gateway 网关协议（WebSocket） — `zh-CN/gateway/protocol.md`
+- [DOC-0474] (zh-CN) 使用远程 Gateway 网关运行 OpenClaw.app — `zh-CN/gateway/remote-gateway-readme.md`
+- [DOC-0475] (zh-CN) 远程访问（SSH、隧道和 tailnet） — `zh-CN/gateway/remote.md`
+- [DOC-0476] (zh-CN) 沙箱 vs 工具策略 vs 提权 — `zh-CN/gateway/sandbox-vs-tool-policy-vs-elevated.md`
+- [DOC-0477] (zh-CN) 沙箱隔离 — `zh-CN/gateway/sandboxing.md`
+- [DOC-0479] (zh-CN) Tailscale（Gateway 网关仪表盘） — `zh-CN/gateway/tailscale.md`
+- [DOC-0480] (zh-CN) 工具调用（HTTP） — `zh-CN/gateway/tools-invoke-http-api.md`
+- [DOC-0509] (zh-CN) 日志 — `zh-CN/logging.md`

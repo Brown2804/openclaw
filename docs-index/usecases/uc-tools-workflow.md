@@ -1,0 +1,136 @@
+# uc-tools-workflow
+
+- 목적: 도구/플러그인/자동화 워크플로우
+- 문서 수: 128
+- 규칙: 한 줄당 1문서, 경로 기준으로 소스 역추적
+
+## 문서 목록
+
+- [DOC-0005] (en) Gmail Pub/Sub -> OpenClaw — `automation/gmail-pubsub.md`
+- [DOC-0041] (en) acp — `cli/acp.md`
+- [DOC-0042] (en) `openclaw agent` — `cli/agent.md`
+- [DOC-0043] (en) `openclaw agents` — `cli/agents.md`
+- [DOC-0044] (en) `openclaw approvals` — `cli/approvals.md`
+- [DOC-0045] (en) `openclaw browser` — `cli/browser.md`
+- [DOC-0046] (en) `openclaw channels` — `cli/channels.md`
+- [DOC-0047] (en) `openclaw config` — `cli/config.md`
+- [DOC-0048] (en) `openclaw configure` — `cli/configure.md`
+- [DOC-0050] (en) `openclaw dashboard` — `cli/dashboard.md`
+- [DOC-0051] (en) `openclaw devices` — `cli/devices.md`
+- [DOC-0052] (en) `openclaw directory` — `cli/directory.md`
+- [DOC-0053] (en) `openclaw dns` — `cli/dns.md`
+- [DOC-0054] (en) `openclaw docs` — `cli/docs.md`
+- [DOC-0056] (en) Gateway CLI — `cli/gateway.md`
+- [DOC-0059] (en) CLI reference — `cli/index.md`
+- [DOC-0060] (en) `openclaw logs` — `cli/logs.md`
+- [DOC-0061] (en) `openclaw memory` — `cli/memory.md`
+- [DOC-0062] (en) `openclaw message` — `cli/message.md`
+- [DOC-0063] (en) `openclaw models` — `cli/models.md`
+- [DOC-0064] (en) `openclaw node` — `cli/node.md`
+- [DOC-0065] (en) `openclaw nodes` — `cli/nodes.md`
+- [DOC-0066] (en) `openclaw onboard` — `cli/onboard.md`
+- [DOC-0067] (en) `openclaw pairing` — `cli/pairing.md`
+- [DOC-0068] (en) `openclaw plugins` — `cli/plugins.md`
+- [DOC-0069] (en) `openclaw reset` — `cli/reset.md`
+- [DOC-0070] (en) Sandbox CLI — `cli/sandbox.md`
+- [DOC-0071] (en) `openclaw security` — `cli/security.md`
+- [DOC-0072] (en) `openclaw sessions` — `cli/sessions.md`
+- [DOC-0073] (en) `openclaw setup` — `cli/setup.md`
+- [DOC-0074] (en) `openclaw skills` — `cli/skills.md`
+- [DOC-0075] (en) `openclaw status` — `cli/status.md`
+- [DOC-0076] (en) `openclaw system` — `cli/system.md`
+- [DOC-0077] (en) `openclaw tui` — `cli/tui.md`
+- [DOC-0079] (en) `openclaw update` — `cli/update.md`
+- [DOC-0080] (en) `openclaw voicecall` — `cli/voicecall.md`
+- [DOC-0225] (en) Plugin agent tools — `plugins/agent-tools.md`
+- [DOC-0226] (en) Community plugins — `plugins/community.md`
+- [DOC-0227] (en) Plugin manifest (openclaw.plugin.json) — `plugins/manifest.md`
+- [DOC-0228] (en) Voice Call (plugin) — `plugins/voice-call.md`
+- [DOC-0229] (en) Zalo Personal (plugin) — `plugins/zalouser.md`
+- [DOC-0305] (en) `openclaw agent` (direct agent runs) — `tools/agent-send.md`
+- [DOC-0306] (en) apply_patch tool — `tools/apply-patch.md`
+- [DOC-0308] (en) Browser login + X/Twitter posting — `tools/browser-login.md`
+- [DOC-0309] (en) Browser (openclaw-managed) — `tools/browser.md`
+- [DOC-0310] (en) Chrome extension (browser relay) — `tools/chrome-extension.md`
+- [DOC-0311] (en) ClawHub — `tools/clawhub.md`
+- [DOC-0312] (en) Creating Custom Skills 🛠 — `tools/creating-skills.md`
+- [DOC-0313] (en) Elevated Mode (/elevated directives) — `tools/elevated.md`
+- [DOC-0314] (en) Exec approvals — `tools/exec-approvals.md`
+- [DOC-0315] (en) Exec tool — `tools/exec.md`
+- [DOC-0316] (en) Firecrawl — `tools/firecrawl.md`
+- [DOC-0317] (en) Tools (OpenClaw) — `tools/index.md`
+- [DOC-0318] (en) LLM Task — `tools/llm-task.md`
+- [DOC-0319] (en) Lobster — `tools/lobster.md`
+- [DOC-0320] (en) Tool-loop detection — `tools/loop-detection.md`
+- [DOC-0321] (en) Multi-Agent Sandbox & Tools Configuration — `tools/multi-agent-sandbox-tools.md`
+- [DOC-0322] (en) Plugins (Extensions) — `tools/plugin.md`
+- [DOC-0323] (en) Reaction tooling — `tools/reactions.md`
+- [DOC-0324] (en) Skills Config — `tools/skills-config.md`
+- [DOC-0325] (en) Skills (OpenClaw) — `tools/skills.md`
+- [DOC-0326] (en) Slash commands — `tools/slash-commands.md`
+- [DOC-0327] (en) Sub-agents — `tools/subagents.md`
+- [DOC-0328] (en) Thinking Levels (/think directives) — `tools/thinking.md`
+- [DOC-0329] (en) Web tools — `tools/web.md`
+- [DOC-0341] (zh-CN) Gmail Pub/Sub -> OpenClaw — `zh-CN/automation/gmail-pubsub.md`
+- [DOC-0375] (zh-CN) acp — `zh-CN/cli/acp.md`
+- [DOC-0376] (zh-CN) `openclaw agent` — `zh-CN/cli/agent.md`
+- [DOC-0377] (zh-CN) `openclaw agents` — `zh-CN/cli/agents.md`
+- [DOC-0378] (zh-CN) `openclaw approvals` — `zh-CN/cli/approvals.md`
+- [DOC-0379] (zh-CN) `openclaw browser` — `zh-CN/cli/browser.md`
+- [DOC-0380] (zh-CN) `openclaw channels` — `zh-CN/cli/channels.md`
+- [DOC-0381] (zh-CN) `openclaw config` — `zh-CN/cli/config.md`
+- [DOC-0382] (zh-CN) `openclaw configure` — `zh-CN/cli/configure.md`
+- [DOC-0384] (zh-CN) `openclaw dashboard` — `zh-CN/cli/dashboard.md`
+- [DOC-0385] (zh-CN) `openclaw devices` — `zh-CN/cli/devices.md`
+- [DOC-0386] (zh-CN) `openclaw directory` — `zh-CN/cli/directory.md`
+- [DOC-0387] (zh-CN) `openclaw dns` — `zh-CN/cli/dns.md`
+- [DOC-0388] (zh-CN) `openclaw docs` — `zh-CN/cli/docs.md`
+- [DOC-0390] (zh-CN) Gateway 网关 CLI — `zh-CN/cli/gateway.md`
+- [DOC-0393] (zh-CN) CLI 参考 — `zh-CN/cli/index.md`
+- [DOC-0394] (zh-CN) `openclaw logs` — `zh-CN/cli/logs.md`
+- [DOC-0395] (zh-CN) `openclaw memory` — `zh-CN/cli/memory.md`
+- [DOC-0396] (zh-CN) `openclaw message` — `zh-CN/cli/message.md`
+- [DOC-0397] (zh-CN) `openclaw models` — `zh-CN/cli/models.md`
+- [DOC-0398] (zh-CN) `openclaw node` — `zh-CN/cli/node.md`
+- [DOC-0399] (zh-CN) `openclaw nodes` — `zh-CN/cli/nodes.md`
+- [DOC-0400] (zh-CN) `openclaw onboard` — `zh-CN/cli/onboard.md`
+- [DOC-0401] (zh-CN) `openclaw pairing` — `zh-CN/cli/pairing.md`
+- [DOC-0402] (zh-CN) `openclaw plugins` — `zh-CN/cli/plugins.md`
+- [DOC-0403] (zh-CN) `openclaw reset` — `zh-CN/cli/reset.md`
+- [DOC-0404] (zh-CN) 沙箱 CLI — `zh-CN/cli/sandbox.md`
+- [DOC-0405] (zh-CN) `openclaw security` — `zh-CN/cli/security.md`
+- [DOC-0406] (zh-CN) `openclaw sessions` — `zh-CN/cli/sessions.md`
+- [DOC-0407] (zh-CN) `openclaw setup` — `zh-CN/cli/setup.md`
+- [DOC-0408] (zh-CN) `openclaw skills` — `zh-CN/cli/skills.md`
+- [DOC-0409] (zh-CN) `openclaw status` — `zh-CN/cli/status.md`
+- [DOC-0410] (zh-CN) `openclaw system` — `zh-CN/cli/system.md`
+- [DOC-0411] (zh-CN) `openclaw tui` — `zh-CN/cli/tui.md`
+- [DOC-0413] (zh-CN) `openclaw update` — `zh-CN/cli/update.md`
+- [DOC-0414] (zh-CN) `openclaw voicecall` — `zh-CN/cli/voicecall.md`
+- [DOC-0550] (zh-CN) 插件智能体工具 — `zh-CN/plugins/agent-tools.md`
+- [DOC-0551] (zh-CN) 插件清单（openclaw.plugin.json） — `zh-CN/plugins/manifest.md`
+- [DOC-0552] (zh-CN) Voice Call（插件） — `zh-CN/plugins/voice-call.md`
+- [DOC-0553] (zh-CN) Zalo Personal（插件） — `zh-CN/plugins/zalouser.md`
+- [DOC-0617] (zh-CN) `openclaw agent`（直接智能体运行） — `zh-CN/tools/agent-send.md`
+- [DOC-0618] (zh-CN) apply_patch 工具 — `zh-CN/tools/apply-patch.md`
+- [DOC-0620] (zh-CN) 浏览器登录 + X/Twitter 发帖 — `zh-CN/tools/browser-login.md`
+- [DOC-0621] (zh-CN) 浏览器（openclaw 托管） — `zh-CN/tools/browser.md`
+- [DOC-0622] (zh-CN) Chrome 扩展（浏览器中继） — `zh-CN/tools/chrome-extension.md`
+- [DOC-0623] (zh-CN) ClawHub — `zh-CN/tools/clawhub.md`
+- [DOC-0624] (zh-CN) 创建自定义 Skills 🛠 — `zh-CN/tools/creating-skills.md`
+- [DOC-0625] (zh-CN) 提升模式（/elevated 指令） — `zh-CN/tools/elevated.md`
+- [DOC-0626] (zh-CN) 执行审批 — `zh-CN/tools/exec-approvals.md`
+- [DOC-0627] (zh-CN) Exec 工具 — `zh-CN/tools/exec.md`
+- [DOC-0628] (zh-CN) Firecrawl — `zh-CN/tools/firecrawl.md`
+- [DOC-0629] (zh-CN) 工具（OpenClaw） — `zh-CN/tools/index.md`
+- [DOC-0630] (zh-CN) LLM 任务 — `zh-CN/tools/llm-task.md`
+- [DOC-0631] (zh-CN) Lobster — `zh-CN/tools/lobster.md`
+- [DOC-0632] (zh-CN) 多智能体沙箱与工具配置 — `zh-CN/tools/multi-agent-sandbox-tools.md`
+- [DOC-0633] (zh-CN) 插件（扩展） — `zh-CN/tools/plugin.md`
+- [DOC-0634] (zh-CN) 表情回应工具 — `zh-CN/tools/reactions.md`
+- [DOC-0635] (zh-CN) Skills 配置 — `zh-CN/tools/skills-config.md`
+- [DOC-0636] (zh-CN) Skills（OpenClaw） — `zh-CN/tools/skills.md`
+- [DOC-0637] (zh-CN) 斜杠命令 — `zh-CN/tools/slash-commands.md`
+- [DOC-0638] (zh-CN) 子智能体 — `zh-CN/tools/subagents.md`
+- [DOC-0639] (zh-CN) 思考级别（/think 指令） — `zh-CN/tools/thinking.md`
+- [DOC-0640] (zh-CN) Web 工具 — `zh-CN/tools/web.md`

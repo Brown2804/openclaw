@@ -1,0 +1,72 @@
+# uc-setup-deploy
+
+- 목적: 설치/온보딩/배포/플랫폼 구성
+- 문서 수: 64
+- 규칙: 한 줄당 1문서, 경로 기준으로 소스 역추적
+
+## 문서 목록
+
+- [DOC-0160] (en) Ansible Installation — `install/ansible.md`
+- [DOC-0161] (en) Bun (experimental) — `install/bun.md`
+- [DOC-0163] (en) Docker (optional) — `install/docker.md`
+- [DOC-0164] (en) exe.dev — `install/exe-dev.md`
+- [DOC-0165] (en) Fly.io Deployment — `install/fly.md`
+- [DOC-0166] (en) OpenClaw on GCP Compute Engine (Docker, Production VPS Guide) — `install/gcp.md`
+- [DOC-0167] (en) OpenClaw on Hetzner (Docker, Production VPS Guide) — `install/hetzner.md`
+- [DOC-0168] (en) Install — `install/index.md`
+- [DOC-0169] (en) Installer internals — `install/installer.md`
+- [DOC-0170] (en) OpenClaw on macOS VMs (Sandboxing) — `install/macos-vm.md`
+- [DOC-0172] (en) Nix Installation — `install/nix.md`
+- [DOC-0173] (en) Node.js — `install/node.md`
+- [DOC-0174] (en) How to get started — `install/northflank.mdx`
+- [DOC-0175] (en) Podman — `install/podman.md`
+- [DOC-0176] (en) Quick checklist (new users) — `install/railway.mdx`
+- [DOC-0177] (en) Prerequisites — `install/render.mdx`
+- [DOC-0185] (en) Network hub — `network.md`
+- [DOC-0196] (en) Pi Development Workflow — `pi-dev.md`
+- [DOC-0197] (en) Pi Integration Architecture — `pi.md`
+- [DOC-0291] (en) Agent Bootstrapping — `start/bootstrapping.md`
+- [DOC-0292] (en) Start here — `start/docs-directory.md`
+- [DOC-0293] (en) Getting Started — `start/getting-started.md`
+- [DOC-0294] (en) Docs hubs — `start/hubs.md`
+- [DOC-0295] (en) The Lore of OpenClaw 🦞📖 — `start/lore.md`
+- [DOC-0296] (en) Onboarding Overview — `start/onboarding-overview.md`
+- [DOC-0297] (en) Onboarding (macOS App) — `start/onboarding.md`
+- [DOC-0298] (en) Building a personal assistant with OpenClaw — `start/openclaw.md`
+- [DOC-0299] (en) Quick start — `start/quickstart.md`
+- [DOC-0300] (en) Setup — `start/setup.md`
+- [DOC-0301] (en) Showcase — `start/showcase.md`
+- [DOC-0302] (en) CLI Automation — `start/wizard-cli-automation.md`
+- [DOC-0303] (en) CLI Onboarding Reference — `start/wizard-cli-reference.md`
+- [DOC-0304] (en) Onboarding Wizard (CLI) — `start/wizard.md`
+- [DOC-0331] (en) VPS hosting — `vps.md`
+- [DOC-0490] (zh-CN) Ansible 安装 — `zh-CN/install/ansible.md`
+- [DOC-0491] (zh-CN) Bun（实验性） — `zh-CN/install/bun.md`
+- [DOC-0493] (zh-CN) Docker（可选） — `zh-CN/install/docker.md`
+- [DOC-0494] (zh-CN) exe.dev — `zh-CN/install/exe-dev.md`
+- [DOC-0495] (zh-CN) Fly.io 部署 — `zh-CN/install/fly.md`
+- [DOC-0496] (zh-CN) 在 GCP Compute Engine 上运行 OpenClaw（Docker，生产 VPS 指南） — `zh-CN/install/gcp.md`
+- [DOC-0497] (zh-CN) 在 Hetzner 上运行 OpenClaw（Docker，生产 VPS 指南） — `zh-CN/install/hetzner.md`
+- [DOC-0498] (zh-CN) 安装 — `zh-CN/install/index.md`
+- [DOC-0499] (zh-CN) 安装器内部机制 — `zh-CN/install/installer.md`
+- [DOC-0500] (zh-CN) 在 macOS 虚拟机上运行 OpenClaw（沙箱隔离） — `zh-CN/install/macos-vm.md`
+- [DOC-0502] (zh-CN) Nix 安装 — `zh-CN/install/nix.md`
+- [DOC-0503] (zh-CN) Node.js — `zh-CN/install/node.md`
+- [DOC-0504] (zh-CN) 如何开始 — `zh-CN/install/northflank.mdx`
+- [DOC-0505] (zh-CN) 快速检查清单（新用户） — `zh-CN/install/railway.mdx`
+- [DOC-0506] (zh-CN) 前提条件 — `zh-CN/install/render.mdx`
+- [DOC-0510] (zh-CN) 网络中心 — `zh-CN/network.md`
+- [DOC-0521] (zh-CN) Pi 开发工作流程 — `zh-CN/pi-dev.md`
+- [DOC-0522] (zh-CN) Pi 集成架构 — `zh-CN/pi.md`
+- [DOC-0606] (zh-CN) 智能体引导 — `zh-CN/start/bootstrapping.md`
+- [DOC-0607] (zh-CN) 从这里开始 — `zh-CN/start/docs-directory.md`
+- [DOC-0608] (zh-CN) 入门指南 — `zh-CN/start/getting-started.md`
+- [DOC-0609] (zh-CN) 文档导航中心 — `zh-CN/start/hubs.md`
+- [DOC-0610] (zh-CN) OpenClaw 的传说 🦞📖 — `zh-CN/start/lore.md`
+- [DOC-0611] (zh-CN) 新手引导（macOS 应用） — `zh-CN/start/onboarding.md`
+- [DOC-0612] (zh-CN) 使用 OpenClaw 构建个人助手 — `zh-CN/start/openclaw.md`
+- [DOC-0613] (zh-CN) 安装 — `zh-CN/start/quickstart.md`
+- [DOC-0614] (zh-CN) 设置 — `zh-CN/start/setup.md`
+- [DOC-0615] (zh-CN) 案例展示 — `zh-CN/start/showcase.md`
+- [DOC-0616] (zh-CN) 新手引导向导（CLI） — `zh-CN/start/wizard.md`
+- [DOC-0642] (zh-CN) VPS 托管 — `zh-CN/vps.md`
