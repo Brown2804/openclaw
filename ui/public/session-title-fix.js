@@ -140,49 +140,64 @@
 
   async function refreshTitles() {
     const app = getApp();
-    if (!app || !app.client || !app.connected) return;
+    if (!app || !app.client) return;
     if (state.inFlight) return;
     const now = Date.now();
-    if (now - state.lastFetchAt < 15000) return;
+    if (now - state.lastFetchAt < 3000) return;
     state.lastFetchAt = now;
     state.inFlight = true;
     try {
       const res = await app.client.request("sessions.list", {
-        limit: 200,
+        limit: 300,
         includeGlobal: false,
         includeUnknown: false,
         includeDerivedTitles: true,
       });
       const rows = Array.isArray(res?.sessions) ? res.sessions : [];
-
-      // Keep app state in sync so the native selector can render more than
-      // just main/current when the built-in active-minute filter is narrow.
-      if (rows.length > 0) {
-        app.sessionsResult = res;
-        if (typeof app.requestUpdate === "function") app.requestUpdate();
+      if (rows.length === 0) {
+        return;
       }
 
-      const select = document.querySelector(".chat-controls__session select");
-      const existing = new Set(
-        select ? Array.from(select.options || []).map((opt) => String(opt.value || "")) : [],
-      );
+      // Keep app state in sync so base render can show full list.
+      app.sessionsResult = res;
+      if (typeof app.requestUpdate === "function") app.requestUpdate();
 
+      const select = document.querySelector(".chat-controls__session select");
+      if (!select) {
+        for (const row of rows) {
+          const key = String(row?.key || "");
+          if (!key) continue;
+          const raw = row?.label || row?.derivedTitle || row?.displayName || key;
+          state.byKey.set(key, sanitizeMetadataTitle(String(raw || ""), key));
+        }
+        return;
+      }
+
+      const currentValue = String(select.value || "");
+      const byKey = new Map();
       for (const row of rows) {
         const key = String(row?.key || "");
         if (!key) continue;
         const raw = row?.label || row?.derivedTitle || row?.displayName || key;
-        state.byKey.set(key, sanitizeMetadataTitle(String(raw || ""), key));
-
-        // Immediate UX fallback: if base UI rendered only 1-2 options, add the missing ones.
-        if (select && !existing.has(key)) {
-          const opt = document.createElement("option");
-          opt.value = key;
-          opt.title = key;
-          opt.textContent = state.byKey.get(key) || sanitizeMetadataTitle(key, key);
-          select.appendChild(opt);
-          existing.add(key);
-        }
+        const title = sanitizeMetadataTitle(String(raw || ""), key);
+        state.byKey.set(key, title);
+        byKey.set(key, title);
       }
+
+      // Rebuild options fully to avoid stale/minimal 2-option state.
+      select.replaceChildren();
+      for (const [key, title] of byKey.entries()) {
+        const opt = document.createElement("option");
+        opt.value = key;
+        opt.title = key;
+        opt.textContent = title;
+        select.appendChild(opt);
+      }
+
+      if (byKey.has(currentValue)) {
+        select.value = currentValue;
+      }
+
       applyToSelect();
     } catch {
       // noop
