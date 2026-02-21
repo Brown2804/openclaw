@@ -185,11 +185,31 @@
     return 0;
   }
 
-  function clearBusyState(app) {
+  async function clearBusyState(app) {
     app.chatRunId = null;
     app.chatStream = null;
     app.chatStreamStartedAt = null;
     if (typeof app.requestUpdate === "function") app.requestUpdate();
+
+    // If messages were queued while UI was falsely busy, release one immediately.
+    if (!app.chatSending && !app.chatRunId && Array.isArray(app.chatQueue) && app.chatQueue.length > 0) {
+      const [next, ...rest] = app.chatQueue;
+      app.chatQueue = rest;
+      try {
+        const prevAttachments = app.chatAttachments;
+        if (Array.isArray(next?.attachments)) {
+          app.chatAttachments = next.attachments;
+        }
+        if (typeof app.handleSendChat === "function") {
+          await app.handleSendChat(typeof next?.text === "string" ? next.text : "", {
+            restoreDraft: false,
+          });
+        }
+        app.chatAttachments = prevAttachments;
+      } catch {
+        app.chatQueue = [next, ...app.chatQueue];
+      }
+    }
   }
 
   async function tick() {
@@ -222,7 +242,7 @@
 
     if (app.chatRunId && finalByRun.has(app.chatRunId)) {
       const doneRun = app.chatRunId;
-      clearBusyState(app);
+      await clearBusyState(app);
       if (!state.refreshedRunIds.has(doneRun)) {
         state.refreshedRunIds.add(doneRun);
         await refreshHistory(app, true);
@@ -243,7 +263,7 @@
       const likelyCompletedByHistory =
         lastAssistantTs > 0 && ((startedAt > 0 && lastAssistantTs >= startedAt) || (startedAt <= 0 && !app.chatSending));
       if ((!hasRecentDelta && likelyCompletedByHistory && sinceStart > 3500) || sinceStart > 180000) {
-        clearBusyState(app);
+        await clearBusyState(app);
       }
     }
 
