@@ -60,6 +60,12 @@ export function buildInboundUserContextPrefix(ctx: TemplateContext): string {
   const chatType = normalizeChatType(ctx.ChatType);
   const isDirect = !chatType || chatType === "direct";
 
+  // Direct chats do not need untrusted metadata wrappers in user content.
+  // Keep only the user's actual message text to reduce prompt/token overhead.
+  if (isDirect) {
+    return "";
+  }
+
   const conversationInfo = {
     message_id: safeTrim(ctx.MessageSid),
     conversation_label: isDirect ? undefined : safeTrim(ctx.ConversationLabel),
