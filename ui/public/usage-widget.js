@@ -177,6 +177,36 @@
     return n.length > 14 ? `${n.slice(0, 14)}…` : n;
   };
 
+  const findModelBySessionKey = (rows, sessionKey) => {
+    if (!Array.isArray(rows) || !sessionKey) {
+      return null;
+    }
+    const row = rows.find((r) => r && r.key === sessionKey);
+    const m = row && typeof row.model === "string" ? row.model.trim() : "";
+    return m || null;
+  };
+
+  const fetchCurrentSessionModel = async (app) => {
+    const sessionKey = app?.sessionKey;
+    if (!sessionKey || !app?.client) {
+      return null;
+    }
+
+    const fromState = findModelBySessionKey(app?.sessionsResult?.sessions, sessionKey);
+    if (fromState) {
+      return fromState;
+    }
+
+    const list = await app.client.request("sessions.list", {
+      limit: 300,
+      includeGlobal: true,
+      includeUnknown: true,
+      includeDerivedTitles: false,
+    });
+    const rows = Array.isArray(list?.sessions) ? list.sessions : [];
+    return findModelBySessionKey(rows, sessionKey);
+  };
+
   let busy = false;
   const refresh = async () => {
     if (busy) {
@@ -213,11 +243,10 @@
       }
 
       if (!model) {
-        const sess = await app.client.request("sessions.list", { activeMinutes: 30, limit: 1 });
-        const raw = JSON.stringify(sess || {});
-        const m = raw.match(/"model"\s*:\s*"([^"]+)"/i);
-        if (m) {
-          model = m[1];
+        try {
+          model = await fetchCurrentSessionModel(app);
+        } catch {
+          // ignore and keep fallback n/a
         }
       }
 
