@@ -44,8 +44,12 @@ OpenClaw 폴더 내 작업(설정 변경, 이슈 트리아지, 장애 분석, �
 - 대화 흐름 보존이 필요한 환경에서는 `openclaw gateway restart`를 직접 치지 않는다.
 - 반드시 아래 래퍼를 사용한다.
   - `bash /home/khj12/.openclaw/workspace/scripts/restart_gateway_with_resume_detached.sh`
-- 필요 시 세션 키를 명시한다.
+- 세션 자동 타깃은 `latest-any`(최근 활성 세션) 기본이다.
+- Discord/메인 세션 고정을 원하면 아래처럼 실행한다.
+  - `bash /home/khj12/.openclaw/workspace/scripts/restart_gateway_with_resume_detached.sh --auto-session main-only`
+- 특정 세션으로 강제하려면 세션 키를 명시한다.
   - `bash /home/khj12/.openclaw/workspace/scripts/restart_gateway_with_resume_detached.sh --session-key agent:main:main`
+- 참고: 게이트웨이 프로세스 재시작 자체로 1~3초 수준의 연결 재수립은 발생할 수 있으나, 래퍼가 재시작 후 자동 이어받기 메시지를 주입한다.
 
 ## 원칙
 
