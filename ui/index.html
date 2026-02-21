@@ -8,9 +8,127 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <style>
+      body > openclaw-app > div > .content.content--chat {
+        gap: 0 !important;
+      }
+
+      body > openclaw-app > div > .content {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        margin: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+
+      body > openclaw-app > div > .content > section.card.chat {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+
+      body > openclaw-app > div > .content > section.card.chat > div.chat-split-container {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+
+      body > openclaw-app > div > .content > section.card.chat > div.chat-split-container > div.chat-main {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+
+      body > openclaw-app > div > .content > section.card.chat > div.chat-split-container > div.chat-main > div.chat-thread {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+
+      body > openclaw-app > div > .content > section.card.chat > div.chat-split-container > div.chat-main > div.chat-thread > :first-child {
+        margin-top: 0 !important;
+      }
+
+      body > openclaw-app > div > .content > section.content-header {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        min-height: 14px !important;
+        margin: 0 !important;
+      }
+
+      body > openclaw-app > div > .content > section.content-header .page-sub,
+      body > openclaw-app > div > .content.content--chat .page-sub {
+        display: none !important;
+      }
+
+      body > openclaw-app > div,
+      body > openclaw-app > div.shell {
+        --shell-topbar-height: 42px !important;
+      }
+
+      body > openclaw-app > div > header.topbar {
+        min-height: 42px !important;
+        height: 42px !important;
+        padding: 0 10px !important;
+      }
+
+      body > openclaw-app .nav .chat-nav-controls-host {
+        margin: 6px 6px 0 6px;
+        padding: 6px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--bg-subtle);
+      }
+
+      body > openclaw-app .nav .chat-nav-controls-host .chat-controls {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-areas:
+          "session session session"
+          "refresh brain focus";
+        gap: 6px;
+        align-items: center;
+      }
+
+      body > openclaw-app .nav .chat-nav-controls-host .chat-controls__separator {
+        display: none !important;
+      }
+
+      body > openclaw-app .nav .chat-nav-controls-host .chat-controls__session {
+        min-width: 0;
+        margin: 0;
+        grid-area: session;
+      }
+
+      body > openclaw-app .nav .chat-nav-controls-host .chat-controls > .btn:nth-of-type(1) {
+        grid-area: refresh;
+      }
+
+      body > openclaw-app .nav .chat-nav-controls-host .chat-controls > .btn:nth-of-type(2) {
+        grid-area: brain;
+      }
+
+      body > openclaw-app .nav .chat-nav-controls-host .chat-controls > .btn:nth-of-type(3) {
+        grid-area: focus;
+      }
+
+      body > openclaw-app .nav .chat-nav-controls-host .chat-controls > .btn {
+        width: 100%;
+      }
+
+      body > openclaw-app .nav .chat-nav-controls-host .chat-controls__session select {
+        width: 100%;
+        font-size: 12px;
+      }
+
+      body > openclaw-app .nav.nav--collapsed .chat-nav-controls-host {
+        display: none !important;
+      }
+    </style>
   </head>
   <body>
     <openclaw-app></openclaw-app>
     <script type="module" src="/src/main.ts"></script>
+    <script src="/live-chat-fix.js"></script>
+    <script src="/nav-chat-controls.js"></script>
   </body>
 </html>

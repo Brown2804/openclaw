@@ -187,7 +187,7 @@ export function renderApp(state: AppViewState) {
           </div>
         </div>
       </aside>
-      <main class="content ${isChat ? "content--chat" : ""}">
+      <div class="content ${isChat ? "content--chat" : ""}">
         <section class="content-header">
           <div>
             ${state.tab === "usage" ? nothing : html`<div class="page-title">${titleForTab(state.tab)}</div>`}
@@ -945,7 +945,7 @@ export function renderApp(state: AppViewState) {
               })
             : nothing
         }
-      </main>
+      </div>
       ${renderExecApprovalPrompt(state)}
       ${renderGatewayUrlConfirmation(state)}
     </div>
