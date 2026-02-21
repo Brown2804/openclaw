@@ -100,6 +100,17 @@ What you personally verified (not just CI), and how:
 - Files/config to restore:
 - Known bad symptoms reviewers should watch for:
 
+## Docs-Indexed 운영 체크 (OpenClaw 설정/이슈 PR)
+
+OpenClaw 설정 변경/이슈 해결 성격의 PR이면 아래를 체크하세요.
+
+- [ ] `docs-index/master-index.md` 기준으로 작업 도메인 분류 완료
+- [ ] 이벤트성 이슈는 `docs-index/eventcases/*.md` 먼저 확인
+- [ ] 관련 DOC-ID를 `docs-index/index.md`에서 역추적
+- [ ] 원문 `docs/...` 근거로 최종 수정/명령 확정
+- [ ] docs 변경이 있으면 `python3 docs-index/scripts/rebuild_index.py` 실행
+- [ ] `docs-index/OPERATIONS-CHECKLIST.md` 항목 확인 완료
+
 ## Risks and Mitigations
 
 List only real risks for this PR. Add/remove entries as needed. If none, write `None`.

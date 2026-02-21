@@ -227,6 +227,7 @@ def main() -> None:
             "## Claude Code Skill 연계 규칙",
             "- OpenClaw 설정/이슈 해결 작업은 `openclaw/skills/claude-code-openclaw/SKILL.md`를 기본 워크플로우로 사용한다.",
             "- 스킬은 이 Master Index를 1차 라우터로 사용해야 한다.",
+            "- 운영 실행 체크리스트는 `openclaw/docs-index/OPERATIONS-CHECKLIST.md`를 따른다.",
             "",
             "## 재생성/대조 명령",
             "```bash",
@@ -237,6 +238,7 @@ def main() -> None:
             "## 산출물",
             "- 상세 임시 인덱스: `openclaw/docs-index/index.md`",
             "- 분할 인덱스: `openclaw/docs-index/usecases/*.md`, `openclaw/docs-index/eventcases/*.md`",
+            "- 운영 체크리스트: `openclaw/docs-index/OPERATIONS-CHECKLIST.md`",
             "- 인덱서 스크립트: `openclaw/docs-index/scripts/*.py`",
         ]
     )

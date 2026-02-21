@@ -36,4 +36,5 @@ OpenClaw 폴더 작업은 이 스킬을 기본 경로로 사용한다.
 
 - 운영 기준: `references/master-index-workflow.md`
 - 버킷 안내: `references/doc-buckets.md`
+- 운영 체크리스트: `openclaw/docs-index/OPERATIONS-CHECKLIST.md`
 - 실행 스크립트: `scripts/session_start_checks.sh`
