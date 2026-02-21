@@ -27,9 +27,32 @@
     return `${channel} · ${short}`;
   }
 
+  function summarizeToWords(text, fallback, minWords = 3, maxWords = 4) {
+    const normalized = String(text || "")
+      .replace(/^[\-:•]+\s*/, "")
+      .replace(/[“”"'`]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+    const words = normalized
+      .split(" ")
+      .map((w) => w.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, ""))
+      .filter(Boolean);
+
+    const fallbackWords = String(fallback || "")
+      .split(" ")
+      .map((w) => w.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, ""))
+      .filter(Boolean);
+
+    while (words.length < minWords && fallbackWords.length > 0) {
+      words.push(fallbackWords.shift());
+    }
+    const out = (words.length ? words : fallbackWords).slice(0, maxWords).join(" ").trim();
+    return truncate(out || fallback || "Session", 42);
+  }
+
   function sanitizeMetadataTitle(raw, key) {
     const fallback = fallbackFromKey(key);
-    if (typeof raw !== "string" || !raw.trim()) return fallback;
+    if (typeof raw !== "string" || !raw.trim()) return summarizeToWords(fallback, fallback);
 
     let text = raw
       .replace(/\[\[\s*reply_to_current\s*\]\]/gi, "")
@@ -67,12 +90,7 @@
       .filter((line) => !/^call\s+[a-z]/i.test(line));
 
     const candidate = useful[0] || lines.find((line) => line.length > 2) || fallback;
-    const normalized = candidate
-      .replace(/^[\-:•]+\s*/, "")
-      .replace(/\s+/g, " ")
-      .trim();
-
-    return truncate(normalized || fallback, 42);
+    return summarizeToWords(candidate, fallback);
   }
 
   function applyToSelect() {
