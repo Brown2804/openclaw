@@ -28,20 +28,45 @@
   }
 
   function summarizeToWords(text, fallback, minWords = 3, maxWords = 4) {
-    const normalized = String(text || "")
-      .replace(/^[\-:•]+\s*/, "")
-      .replace(/[“”"'`]/g, "")
-      .replace(/\s+/g, " ")
-      .trim();
-    const words = normalized
-      .split(" ")
-      .map((w) => w.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, ""))
-      .filter(Boolean);
+    const blocked = new Set([
+      "conversation",
+      "info",
+      "untrusted",
+      "metadata",
+      "sender",
+      "thread",
+      "starter",
+      "replied",
+      "forwarded",
+      "context",
+      "json",
+      "message",
+      "chat",
+      "history",
+      "since",
+      "last",
+      "reply",
+      "system",
+      "role",
+      "type",
+      "text",
+      "body",
+      "label",
+    ]);
 
-    const fallbackWords = String(fallback || "")
-      .split(" ")
-      .map((w) => w.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, ""))
-      .filter(Boolean);
+    const tokenize = (value) =>
+      String(value || "")
+        .replace(/^[\-:•]+\s*/, "")
+        .replace(/[“”"'`]/g, "")
+        .replace(/\s+/g, " ")
+        .trim()
+        .split(" ")
+        .map((w) => w.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, ""))
+        .filter(Boolean)
+        .filter((w) => !blocked.has(w.toLowerCase()));
+
+    const words = tokenize(text);
+    const fallbackWords = tokenize(fallback);
 
     while (words.length < minWords && fallbackWords.length > 0) {
       words.push(fallbackWords.shift());
@@ -100,8 +125,12 @@
     if (!select) return;
     for (const opt of Array.from(select.options || [])) {
       const key = String(opt.value || "");
-      const title = state.byKey.get(key);
-      if (!title) continue;
+      const current = String(opt.textContent || "");
+      const mapped = state.byKey.get(key);
+      const title = mapped || sanitizeMetadataTitle(current, key);
+      if (!mapped) {
+        state.byKey.set(key, title);
+      }
       if (opt.textContent !== title) {
         opt.textContent = title;
       }
