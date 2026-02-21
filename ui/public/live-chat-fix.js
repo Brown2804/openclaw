@@ -262,7 +262,17 @@
       const lastAssistantTs = latestAssistantTimestamp(app.chatMessages);
       const likelyCompletedByHistory =
         lastAssistantTs > 0 && ((startedAt > 0 && lastAssistantTs >= startedAt) || (startedAt <= 0 && !app.chatSending));
-      if ((!hasRecentDelta && likelyCompletedByHistory && sinceStart > 3500) || sinceStart > 180000) {
+
+      const hasStreamText = typeof app.chatStream === "string" && app.chatStream.length > 0;
+      const queueLen = Array.isArray(app.chatQueue) ? app.chatQueue.length : 0;
+      const likelyStaleBusyNoHistory =
+        !app.chatSending &&
+        !hasRecentDelta &&
+        !hasStreamText &&
+        queueLen > 0 &&
+        sinceStart > 2000;
+
+      if ((!hasRecentDelta && likelyCompletedByHistory && sinceStart > 3500) || sinceStart > 180000 || likelyStaleBusyNoHistory) {
         await clearBusyState(app);
       }
     }
