@@ -173,6 +173,25 @@
     }
   }
 
+  function latestAssistantTimestamp(messages) {
+    if (!Array.isArray(messages)) return 0;
+    for (let i = messages.length - 1; i >= 0; i--) {
+      const m = messages[i];
+      if (!m || typeof m !== "object") continue;
+      if (m.role !== "assistant") continue;
+      const ts = Number(m.timestamp || 0);
+      if (Number.isFinite(ts) && ts > 0) return ts;
+    }
+    return 0;
+  }
+
+  function clearBusyState(app) {
+    app.chatRunId = null;
+    app.chatStream = null;
+    app.chatStreamStartedAt = null;
+    if (typeof app.requestUpdate === "function") app.requestUpdate();
+  }
+
   async function tick() {
     const app = getApp();
     if (!app || !app.connected) return;
@@ -182,7 +201,7 @@
     if (toolSig !== state.lastToolSig) {
       state.lastToolSig = toolSig;
       app.chatToolMessages = messages;
-      if (!app.chatRunId && latestRunId) {
+      if (!app.chatRunId && latestRunId && (app.chatSending || app.chatStream)) {
         app.chatRunId = latestRunId;
       }
       if (typeof app.requestUpdate === "function") app.requestUpdate();
@@ -203,15 +222,29 @@
 
     if (app.chatRunId && finalByRun.has(app.chatRunId)) {
       const doneRun = app.chatRunId;
-      app.chatStream = null;
-      app.chatRunId = null;
-      app.chatStreamStartedAt = null;
-      if (typeof app.requestUpdate === "function") app.requestUpdate();
+      clearBusyState(app);
       if (!state.refreshedRunIds.has(doneRun)) {
         state.refreshedRunIds.add(doneRun);
         await refreshHistory(app, true);
       }
       return;
+    }
+
+    // Recovery path: if final event was missed but history already contains a fresh assistant reply,
+    // clear stale busy state so queue/stop UI is not stuck until manual refresh.
+    if (app.chatRunId) {
+      const now = Date.now();
+      const startedAt = Number(app.chatStreamStartedAt || 0);
+      const sinceStart = startedAt > 0 ? now - startedAt : Number.POSITIVE_INFINITY;
+      const hasRecentDelta = Boolean(
+        latestDelta && (!latestDelta.runId || latestDelta.runId === app.chatRunId) && now - latestDelta.ts < 2500,
+      );
+      const lastAssistantTs = latestAssistantTimestamp(app.chatMessages);
+      const likelyCompletedByHistory =
+        lastAssistantTs > 0 && ((startedAt > 0 && lastAssistantTs >= startedAt) || (startedAt <= 0 && !app.chatSending));
+      if ((!hasRecentDelta && likelyCompletedByHistory && sinceStart > 3500) || sinceStart > 180000) {
+        clearBusyState(app);
+      }
     }
 
     const shouldPassiveSync = app.tab === "chat" && !app.chatManualRefreshInFlight;
