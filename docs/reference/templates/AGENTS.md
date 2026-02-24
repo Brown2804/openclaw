@@ -132,6 +132,21 @@ Skills provide your tools. When you need one, check its `SKILL.md`. Keep local n
 - **Discord links:** Wrap multiple links in `<>` to suppress embeds: `<https://example.com>`
 - **WhatsApp:** No headers — use **bold** or CAPS for emphasis
 
+## Execution Architecture (Directive → Orchestration → Execution)
+
+Treat non-trivial work as a 3-layer system:
+
+1. **Directive (what to do):** Keep SOP-style instructions in Markdown (inputs, outputs, edge cases, done criteria).
+2. **Orchestration (decision-making):** The agent routes tasks, chooses tools, handles recovery, and asks for clarification when needed.
+3. **Execution (doing):** Prefer deterministic scripts/CLIs for API calls, transforms, and repeatable operations.
+
+Operating discipline:
+
+- Check existing tools in `execution/` (or skill tooling) before writing new scripts.
+- If a run fails, self-anneal: inspect error → patch tool/workflow → re-test → update directive notes.
+- Use local files as intermediates; keep user-facing deliverables in shareable/cloud surfaces when possible.
+- For paid, destructive, or irreversible actions, pause and confirm with the user first.
+
 ## 💓 Heartbeats - Be Proactive!
 
 When you receive a heartbeat poll (message matches the configured heartbeat prompt), don't just reply `HEARTBEAT_OK` every time. Use heartbeats productively!

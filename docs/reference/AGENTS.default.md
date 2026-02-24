@@ -75,6 +75,21 @@ cp docs/reference/AGENTS.default.md ~/.openclaw/workspace/AGENTS.md
 - Tools live in skills; follow each skill’s `SKILL.md` when you need it.
 - Keep environment-specific notes in `TOOLS.md` (Notes for Skills).
 
+## Execution Architecture (Directive → Orchestration → Execution)
+
+Treat non-trivial work as a 3-layer system:
+
+1. **Directive (what to do):** Keep SOP-style instructions in Markdown (inputs, outputs, edge cases, done criteria).
+2. **Orchestration (decision-making):** The agent routes tasks, chooses tools, handles recovery, and asks for clarification when needed.
+3. **Execution (doing):** Prefer deterministic scripts/CLIs for API calls, transforms, and repeatable operations.
+
+Operating discipline:
+
+- Check existing tools in `execution/` (or skill tooling) before writing new scripts.
+- If a run fails, self-anneal: inspect error → patch tool/workflow → re-test → update directive notes.
+- Use local files as intermediates; keep user-facing deliverables in shareable/cloud surfaces when possible.
+- For paid, destructive, or irreversible actions, pause and confirm with the user first.
+
 ## Backup tip (recommended)
 
 If you treat this workspace as Clawd’s “memory”, make it a git repo (ideally private) so `AGENTS.md` and your memory files are backed up.
